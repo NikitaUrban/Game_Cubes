@@ -20,6 +20,7 @@ btn1.addEventListener('click',function () {
                 playerSum += arr1[i]
                 if (i === 4){ playerSr += ( playerSum / 5 ) }
             }
+
             let playerResult = document.querySelector('#playerResult')
             playerResult.innerHTML = 'Результат игрока:' + playerSr
             let computerSum = 0// сумма очков компьютера
@@ -53,6 +54,10 @@ btn1.addEventListener('click',function () {
             buttons.style.display = 'block'
             gameBlock.style.display = 'none'
         })
-    })п
+    })
+
+})
+
+btn2.addEventListener('click',function () {
 
 })
