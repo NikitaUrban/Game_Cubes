@@ -27,6 +27,7 @@ btn1.addEventListener('click',function () {
     newGame.disabled = true
     playerBtn.addEventListener('click',function () {
         playerBtn.disabled = true
+        exit.disabled = true
         let arr1 = []//массив для очков игрока
             let playerSum = 0// сумма очков игрока
             let playerSr = 0 // среднее арифметическое по итогам 5 бросков у игрока
@@ -54,6 +55,7 @@ btn1.addEventListener('click',function () {
                 else if (playerSr < computerSr) { winner.innerHTML = 'Победил компьютер :('}
                 else { winner.innerHTML = 'Ничья!'}
                 newGame.disabled = false
+                exit.disabled = false
             }, 5000)
 
         newGame.addEventListener('click',function () {
@@ -71,6 +73,7 @@ btn1.addEventListener('click',function () {
 
 btn2.addEventListener('click',function () {//кнопка выбора хода компьютера
     let ex = document.querySelector('#ex')//кнопка выхода из игры
+    ex.disabled = true
     ex.addEventListener('click',function () {
         buttons.style.display = 'block'
         gameBlock2.style.display = 'none'
@@ -118,12 +121,14 @@ btn2.addEventListener('click',function () {//кнопка выбора хода 
             else if (playerSr < computerSr) { win.innerHTML = 'Победил компьютер :('}
             else { win.innerHTML = 'Ничья!'}
             again.disabled = false
+            ex.disabled = false
         },2000)
 
 
         again.addEventListener('click',function () {
             play.disabled = true
             again.disabled = true
+            ex.disabled = true
             playerRes.innerHTML = ''
             compRes.innerHTML = ''
             win.innerHTML = ''
