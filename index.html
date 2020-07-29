@@ -14,7 +14,7 @@
             margin: 0 auto;
             position: relative;
         }
-        #block #buttons, #block #gameBlock{
+        #block #buttons, #block #gameBlock,#block #gameBlock2{
             position: absolute;
             top: 35%;
             left: 50%;
@@ -24,7 +24,7 @@
         #block #buttons #btn2{
             margin-top: 15px;
         }
-        #block #gameBlock,#block #computerGameBlock{
+        #block #gameBlock,#block #gameBlock2{
         display: none;
         }
         input{
@@ -55,6 +55,16 @@
         <button id="newGame">Очистить</button>
         <br>
         <button id="exit">Выход</button>
+    </div>
+    <div id="gameBlock2">
+        <p>Подождите результат компьютера!</p>
+        <p id="compRes"></p>
+        <button id="play">Ваш ход</button>
+        <p id="playerRes"></p>
+        <p id="win"></p>
+        <button id="again">Заново</button>
+        <br>
+        <button id="ex">Выход</button>
     </div>
 
 </div>
