@@ -22,19 +22,37 @@ btn1.addEventListener('click',function () {
             }
             let playerResult = document.querySelector('#playerResult')
             playerResult.innerHTML = 'Результат игрока:' + playerSr
-
+            let computerSum = 0// сумма очков компьютера
+            let computerSr = 0 // среднее арифметическое по итогам 5 бросков у компьютера
+            let computerResult = document.querySelector('#computerResult')//заполним абзац результата компа
+            let winner = document.querySelector('#winner')//заполнится абзац кто победил
             setTimeout( () => {//результат компьютера выведется с задержкой в 3 секунды
                 let arr2 = [] // массив для очков компьютера
-                let computerSum = 0// сумма очков компьютера
-                let computerSr = 0 // среднее арифметическое по итогам 5 бросков у компьютера
+
                 for(let i = 0 ; i < 5 ; i++){
                     arr2[i] = getRandomInt(1,6)
                     computerSum += arr2[i]
                     if (i === 4) { computerSr += ( computerSum / 5)}
                 }
-                let computerResult = document.querySelector('#computerResult')
                 computerResult.innerHTML = 'Результат компьютера:' + computerSr
             }, 3000)
-    })
+            setTimeout( () => {
+                if (playerSr > computerSr) { winner.innerHTML = 'Вы победили, поздравляем!!!'}
+                else if (playerSr < computerSr) { winner.innerHTML = 'Победил компьютер :('}
+                else { winner.innerHTML = 'Ничья!'}
+            }, 5000)
+        let newGame = document.querySelector('#newGame')//кнопка для начала новой игры (попробовать еще раз)
+        newGame.addEventListener('click',function () {
+            playerResult.innerHTML = ''
+            computerResult.innerHTML = ''
+            winner.innerHTML = ''
+
+        })
+        let exit = document.querySelector('#exit')//кнопка выхода из игры
+        exit.addEventListener('click',function () {
+            buttons.style.display = 'block'
+            gameBlock.style.display = 'none'
+        })
+    })п
 
 })
